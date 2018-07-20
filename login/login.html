@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>로그인화면</title>
+    <style>
+    form
+    {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+
+    }
+    form div + div
+    {
+        margin-top: 1em;
+    }
+    label
+    {
+    /* To make sure that all label have the same size and are properly align */
+    display: inline-block;
+    width: 300px;
+    text-align: right;
+    }
+    </style>
+
+    <script language=javascript>
+    function success()
+    {
+      var id=document.getElementById('input_id').value;
+      var pw=document.getElementById('input_pw').value;
+
+      if(id=="kimjiwan"&&pw==1)
+      {
+        alert("로그인성공!")
+      }
+      else
+      {
+        alert("실패!")
+      }
+
+    }
+    </script>
+
+  </head>
+  <body>
+    <form method="POST" >
+      <div>
+      <label for="loginID">ID  : <input type="text" id = "input_id" name = "loginID" /></label>
+      </div>
+      <div>
+      <label>PW : <input type="password" id = "input_pw" name="loginPW" /></label>
+    </div>
+  </br>
+        <center>
+          <input type="button" name = "Register" value = "회원가입" onclick = "location.href='register.html'"; />
+         <input type="button" name = "login" value = "로그인" onclick = 'success()' />
+       </center>
+  </form>
+
+  </body>
+</html>

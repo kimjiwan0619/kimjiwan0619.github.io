@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset ="utf-8" />
+  <title>회원가입</title>
+  <style>
+  form
+  {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  }
+  form div + div
+  {
+      margin-top: 1em;
+  }
+  label
+  {
+  /* To make sure that all label have the same size and are properly align */
+  display: inline-block;
+  width: 300px;
+  text-align: right;
+  }
+  </style>
+
+  <script language="javascript">
+
+
+    var userid=doc.getElementById('input_ID').value;
+    var userpw=doc.getElementById('input_PW').value;
+    var userpw_a=doc.getElementById('input_PW_a').value;
+    var usermail=doc.getElementById('input_mail').value;
+    var phone_num=doc.getElementById('input_phone').value;
+
+  function check_id()
+  {
+    if (userid=='asd')
+    {
+      alert('중복입니다');
+      doc.getElementById('input_ID').focus();
+    }
+  }
+
+  function check_pw
+  {
+    if(userpw!=userpw_a)
+    {
+      alert('비밀번호가다릅니다');
+      doc.getElementById('input_PW').value='';
+      doc.getElementById('input_PW_a').value='';
+      doc.getElementById('input_PW').focus();
+      return;
+    }
+  }
+  function check_mail
+  {
+    var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
+    if(!regExp.test(usermail))
+    {
+      alert('이메일형식이아닙니다')
+      doc.getElementById('input_mail').value='';
+      doc.getElementById('input_mail').focus();
+      return;
+    }
+  }  else
+    {
+        alert('회원가입 축하합니다!')
+    }
+
+
+  </script>
+</head>
+  <body>
+    <form name ='join' method="POST" onfocusout="checked(this)">
+      <h1>input your information</h1>
+
+        <label for="userid">아이디: <input  type="text" id="input_ID" name="userid"  /></label>
+        <br />
+        <label for="userpw">비밀번호: <input  type="text" id="input_PW" name="userpw" /></label>
+        <br />
+        <label for="userpw_a">비번 재확인: <input  type="text" id="input_PW_a" name="userpw_a" /></label>
+        <br />
+        <label for="usermail">이메일: <input for type="text" id="input_mail" name="usermail" /></label>
+        <br />
+        <label for="phone_num">핸드폰번호: <input for type="text" id="input_phone"name="phone_num" /></label>
+        <br />
+        <input type="submit" value="회원가입"/ onblur="checked()">
+        <input type="reset" value="다시입력"/>
+  </form>
+
+  </body>
+</html>
